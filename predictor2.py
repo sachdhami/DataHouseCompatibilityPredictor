@@ -10,14 +10,14 @@ def calculate_score(applicant, team):
         diff_endurance = abs(applicant["attributes"]["endurance"] - member["attributes"]["endurance"])
         diff_spicyFoodTolerance = abs(applicant["attributes"]["spicyFoodTolerance"] - member["attributes"]["spicyFoodTolerance"])
         
-        # Add up the differences
+        # Adds up the differences
         total_diff = diff_intelligence + diff_strength + diff_endurance + diff_spicyFoodTolerance
         
-        # Calculate the compatibility score and add it to the total score for this applicant
+        # Calculates the compatibility score and adds it to the total score for this applicant
         compatibility_score = 1 - (total_diff / 40)  # 40 is the maximum difference that can occur
         score += compatibility_score
     
-    # Average the total score across all team members and return the result
+    # Averages the total score across all team members and returns the result
     return score / len(team)
 
 
@@ -93,6 +93,7 @@ input_data = {
     ]
 }
 
+#prints output
 output_data = calculate_scores(input_data["applicants"], input_data["team"])
 print(output_data)
 
